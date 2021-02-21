@@ -1,5 +1,9 @@
 package com.sistema.gerenciador.repository;
 
-public interface TarefasRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.sistema.gerenciador.model.Tarefas;
+
+public interface TarefasRepository extends JpaRepository<Tarefas, Long> {
 
 }
