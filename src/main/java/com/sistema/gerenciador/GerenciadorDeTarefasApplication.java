@@ -1,10 +1,18 @@
-package com.sistema.gerenciador;
+	package com.sistema.gerenciador;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class GerenciadorDeTarefasApplication {
+public class GerenciadorDeTarefasApplication extends SpringBootServletInitializer {
+	
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(GerenciadorDeTarefasApplication.class);
+	}
+	
 
 	public static void main(String[] args) {
 		SpringApplication.run(GerenciadorDeTarefasApplication.class, args);
