@@ -12,6 +12,7 @@
 	<groupId>com.sistema</groupId>
 	<artifactId>gerenciador</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>gerenciador_de_tarefas</name>
 	<description>Gerenciador de Tarefas</description>
 	<properties>
