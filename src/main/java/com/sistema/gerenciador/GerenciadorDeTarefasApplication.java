@@ -1,4 +1,4 @@
-	package com.sistema.gerenciador;
+package com.sistema.gerenciador;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
