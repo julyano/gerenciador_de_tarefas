@@ -10,7 +10,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @DataJpaTest
 @AutoConfigureTestDatabase(replace=Replace.NONE)
-//@SpringBootTest
 public class GerenciadorDeTarefasApplicationTests {
 
 	@Test
