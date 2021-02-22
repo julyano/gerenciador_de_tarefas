@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+  <h:body>     
+      <h1> Cadastrar Tarefa </h1>
+
+	<h:form>
+		Título: <h:inputText value="#{tarefasController.tarefas.titulo}" />
+					Descrição: <h:inputTextarea value="#{tarefasController.tarefas.descricao}" />
+					Responsável:
+					<h:selectOneMenu id="responsavel" value="#{tarefasController.tarefas.responsavel}">
+						<f:selectItems value="#{tarefasController.responsavelOptionsMap}" />
+					</h:selectOneMenu>
+					Prioridade:
+					<h:selectOneMenu id="prioridade" value="#{tarefasController.tarefas.prioridade}">
+						<f:selectItems value="#{tarefasController.prioridadeOptionsMap}" />
+					</h:selectOneMenu>
+					Dead Line: <h:inputText value="#{tarefasController.tarefas.deadline}">
+						<f:convertDateTime type="date" pattern="dd/mm/yyyy"/>
+					</h:inputText>
+					<h:commandButton action="#{tarefasController.salvar}" value="Cadastrar" />
+		</h:form>
+</h:body>
+</html>

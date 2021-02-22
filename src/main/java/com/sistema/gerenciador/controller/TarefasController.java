@@ -1,5 +1,8 @@
 package com.sistema.gerenciador.controller;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
@@ -15,7 +18,27 @@ public class TarefasController {
 	@Autowired
 	private TarefasRepository tarefasRepository; 
 	
-	private Tarefas tarefas = new Tarefas(); 
+	private Tarefas tarefas = new Tarefas();
+	
+	private Map<String, String> responsavelOptionsMap;
+	
+	private Map<String, String> prioridadeOptionsMap;
+	
+	public TarefasController() {
+		responsavelOptionsMap = new LinkedHashMap<>();
+		
+		responsavelOptionsMap.put("Juliano", "Juliano");
+		responsavelOptionsMap.put("Ana", "Ana");
+		responsavelOptionsMap.put("João", "João");
+		responsavelOptionsMap.put("Maria", "Maria");
+		responsavelOptionsMap.put("Luna", "Luna");
+		
+		prioridadeOptionsMap = new LinkedHashMap<>();
+		
+		prioridadeOptionsMap.put("Alta", "Alta");
+		prioridadeOptionsMap.put("Baixa", "Baixa");
+		prioridadeOptionsMap.put("Média", "Média");		
+	}
 	
 	public void salvar() {
 		tarefasRepository.save(getTarefas());
@@ -27,5 +50,13 @@ public class TarefasController {
 
 	public void setTarefas(Tarefas tarefas) {
 		this.tarefas = tarefas;
+	}
+	
+	public Map<String, String> getResponsavelOptionsMap() {
+		return responsavelOptionsMap;
+	}
+	
+	public Map<String, String> getPrioridadeOptionsMap() {
+		return prioridadeOptionsMap;
 	}
 }
