@@ -19,7 +19,7 @@ public class TarefasController {
 	private TarefasRepository tarefasRepository; 
 	
 	private Tarefas tarefas = new Tarefas();
-	
+
 	private Map<String, String> responsavelOptionsMap;
 	
 	private Map<String, String> prioridadeOptionsMap;
