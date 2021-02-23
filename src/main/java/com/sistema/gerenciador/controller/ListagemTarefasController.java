@@ -38,9 +38,10 @@ public class ListagemTarefasController {
 		
 		responsavelOptionsMap.put("Juliano", "Juliano");
 		responsavelOptionsMap.put("Ana", "Ana");
-		responsavelOptionsMap.put("João", "João");
-		responsavelOptionsMap.put("Maria", "Maria");
+		responsavelOptionsMap.put("Tom", "Tom");
 		responsavelOptionsMap.put("Luna", "Luna");
+		responsavelOptionsMap.put("Bruno", "Bruno");
+		responsavelOptionsMap.put("Kelly", "Kelly");
 		
 		prioridadeOptionsMap = new LinkedHashMap<>();
 		
@@ -53,9 +54,8 @@ public class ListagemTarefasController {
 		setListagemTarefas(tarefasRepository.buscarTarefas(
 				tarefas.getTitulo(), tarefas.getResponsavel(), tarefas.getPrioridade(), tarefas.getId()));
 		for (Tarefas t : listagemTarefas) {
-			System.out.println("valor = " + t.getTitulo() + " " + t.getResponsavel());
+			System.out.println(t.toString());
 		}
-		System.out.println(listagemTarefas);
 	}
 
 	public Tarefas getTarefas() {
