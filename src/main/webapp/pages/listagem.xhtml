@@ -13,10 +13,7 @@
 				columnClasses="p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4, p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4"
 				contentStyleClass="p-align-baseline ui-fluid">
 				<p:outputLabel value="Número: " />
-				<p:inputText value="#{listagemTarefasController.tarefas.id}" id="numero"
-					size="8" required="true"
-					requiredMessage="Por favor insira o número de uma tarefa." />
-				<p:watermark for="numero" value="Número" />
+				<p:inputText value="#{listagemTarefasController.tarefas.id}" />
 				<p:outputLabel value="Título/Descrição: " />
 				<p:inputTextarea value="#{listagemTarefasController.tarefas.titulo}" />
 				<p:outputLabel value="Responsável: " />
@@ -29,6 +26,24 @@
 					value="Buscar Tarefas" />
 			</p:panelGrid>
 		</h:form>
+		<p:dataTable var="tarefa" value="#{listagemTarefasController.listagemTarefas}" paginator="true" rows="4" clientCache="true">
+			<f:facet name="header">
+		        Tarefas
+		    </f:facet>
+			<p:column  headerText="Título">
+		    	#{tarefa.titulo}
+			</p:column>
+			<p:column headerText="Responsável">
+		        #{tarefa.responsavel}
+		    </p:column>
+		    <p:column headerText="Ações">
+                <p:link outcome="index">Editar</p:link>
+                <p:outputLabel value=" | " />
+                <p:link outcome="index">Excluir</p:link>
+                <p:outputLabel value=" | " />
+                <p:link outcome="index">Concluir</p:link>
+            </p:column>
+		</p:dataTable>
 	</p:fieldset>
 </h:body>
 </html>
