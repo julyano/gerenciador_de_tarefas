@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Listagem de Tarefas</title>
+</h:head>
+<h:body>
+
+	<p:fieldset legend="Listagem de Tarefas">
+		<h:form>
+			<p:panelGrid columns="2" layout="flex"
+				columnClasses="p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4, p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4"
+				contentStyleClass="p-align-baseline ui-fluid">
+				<p:outputLabel value="Número: " />
+				<p:inputText value="#{listagemTarefasController.tarefas.id}" id="numero"
+					size="8" required="true"
+					requiredMessage="Por favor insira o número de uma tarefa." />
+				<p:watermark for="numero" value="Número" />
+				<p:outputLabel value="Título/Descrição: " />
+				<p:inputTextarea value="#{listagemTarefasController.tarefas.titulo}" />
+				<p:outputLabel value="Responsável: " />
+				<p:selectOneMenu id="responsavel"
+					value="#{listagemTarefasController.tarefas.responsavel}">
+					<f:selectItems value="#{listagemTarefasController.responsavelOptionsMap}" />
+				</p:selectOneMenu>
+
+				<p:commandButton action="#{listagemTarefasController.buscar}"
+					value="Buscar Tarefas" />
+			</p:panelGrid>
+		</h:form>
+	</p:fieldset>
+</h:body>
+</html>
