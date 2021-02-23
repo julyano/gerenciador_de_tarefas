@@ -11,11 +11,11 @@ import com.sistema.gerenciador.model.Tarefas;
 public interface TarefasRepository extends JpaRepository<Tarefas, Long> {
 	
 	@Query("SELECT t FROM Tarefas t "
-			+ "WHERE (t.titulo LIKE CONCAT('%',titulo,'%') "
-			+ "OR t.descricao LIKE CONCAT('%',titulo,'%')) "
-			+ "AND t.responsavel LIKE CONCAT('%',reponsavel,'%') "
-			+ "AND t.prioridade LIKE CONCAT('%',prioridade,'%') "
-			+ "AND t.id LIKE CONCAT('%',id,'%')")
+			+ "WHERE (t.titulo LIKE CONCAT('%',:titulo,'%') "
+			+ "OR t.descricao LIKE CONCAT('%',:titulo,'%')) "
+			+ "OR t.responsavel = :responsavel "
+			+ "OR t.prioridade = :prioridade "
+			+ "OR t.id = :id")
 	public List<Tarefas> buscarTarefas(
 			@Param("titulo") String titulo, 
 			@Param("responsavel") String responsavel, 
