@@ -29,9 +29,10 @@ public class TarefasController {
 		
 		responsavelOptionsMap.put("Juliano", "Juliano");
 		responsavelOptionsMap.put("Ana", "Ana");
-		responsavelOptionsMap.put("João", "João");
-		responsavelOptionsMap.put("Maria", "Maria");
+		responsavelOptionsMap.put("Tom", "Tom");
 		responsavelOptionsMap.put("Luna", "Luna");
+		responsavelOptionsMap.put("Bruno", "Bruno");
+		responsavelOptionsMap.put("Kelly", "Kelly");
 		
 		prioridadeOptionsMap = new LinkedHashMap<>();
 		
