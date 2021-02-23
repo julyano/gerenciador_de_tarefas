@@ -11,10 +11,11 @@ import javax.persistence.Id;
 @Entity
 public class Tarefas {
 	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
+
 	@Column(name = "titulo")
 	private String titulo;
 	
@@ -83,6 +84,19 @@ public class Tarefas {
 		this.deadline = deadline;
 	}
 	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+	
+	@Override
+	public String toString() {
+		return "Tarefas [id=" + id + ", titulo=" + titulo + ", descricao=" + descricao + ", responsavel=" + responsavel
+				+ ", prioridade=" + prioridade + ", deadline=" + deadline + "]";
+	}
 	
 
 }
