@@ -53,9 +53,8 @@ public class ListagemTarefasController {
 		setListagemTarefas(tarefasRepository.buscarTarefas(
 				tarefas.getTitulo(), tarefas.getResponsavel(), tarefas.getPrioridade(), tarefas.getId()));
 		for (Tarefas t : listagemTarefas) {
-			System.out.println("valor = " + t.getTitulo() + " " + t.getResponsavel());
+			t.toString();
 		}
-		System.out.println(listagemTarefas);
 	}
 
 	public Tarefas getTarefas() {
