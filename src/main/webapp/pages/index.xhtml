@@ -13,12 +13,9 @@
 				columnClasses="p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4, p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4"
 				contentStyleClass="p-align-baseline ui-fluid">
 				<p:outputLabel value="Título: " />
-				<p:inputText value="#{tarefasController.tarefas.titulo}" id="tarefa"
-					size="4" required="true"
-					requiredMessage="Por favor insira o nome de uma tarefa." />
-				<p:watermark for="tarefa" value="Tarefa *" />
+				<p:inputText value="#{tarefasController.tarefas.titulo}" required="true" />
 				<p:outputLabel value="Descrição: " />
-				<p:inputTextarea value="#{tarefasController.tarefas.descricao}" />
+				<p:inputTextarea value="#{tarefasController.tarefas.descricao}" required="true"/>
 				<p:outputLabel value="Responsável: " />
 				<p:selectOneMenu id="responsavel"
 					value="#{tarefasController.tarefas.responsavel}">
@@ -31,7 +28,7 @@
 				</p:selectOneMenu>
 				<p:outputLabel value="Deadline: " />
 				<p:calendar value="#{tarefasController.tarefas.deadline}"
-					pattern="dd/mm/yyyy HH:mm" />
+					pattern="dd/mm/yyyy HH:mm" required="true" />
 
 				<p:commandButton action="#{tarefasController.salvar}"
 					value="Cadastrar" />

@@ -7,19 +7,7 @@
 		 version="2.5">
 		 
 	  <display-name>gerenciador</display-name>
-	  
-	  <!-- The Bootstrap listener to start up and shut down Spring's root WebApplicationContext. It is registered to Servlet Container -->
-	  <listener>
-		<listener-class>
-			org.springframework.web.context.ContextLoaderListener
-		</listener-class>
-	  </listener>
-	  <listener>
-		<listener-class>
-			org.springframework.web.context.request.RequestContextListener
-		</listener-class>
-	  </listener>
-	 
+	  	 
 	  <!-- Project Stage Level -->
 	  <context-param>
 	    <param-name>javax.faces.PROJECT_STAGE</param-name>
