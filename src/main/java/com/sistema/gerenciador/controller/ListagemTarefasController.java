@@ -57,6 +57,15 @@ public class ListagemTarefasController {
 			System.out.println(t.toString());
 		}
 	}
+	
+	public void excluir(Tarefas tarefa) {
+		tarefasRepository.delete(tarefa);
+		listagemTarefas.remove(tarefa);
+	}
+	
+	public void editar(Tarefas tarefa) {
+		setTarefas(tarefa);
+	}
 
 	public Tarefas getTarefas() {
 		return tarefas;
