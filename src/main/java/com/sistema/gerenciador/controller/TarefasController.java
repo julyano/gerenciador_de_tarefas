@@ -1,8 +1,11 @@
 package com.sistema.gerenciador.controller;
 
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
@@ -42,7 +45,16 @@ public class TarefasController {
 	}
 	
 	public void salvar() {
-		tarefasRepository.save(getTarefas());
+		try {
+			tarefasRepository.save(getTarefas());
+			getTarefas().setTitulo("");
+			getTarefas().setDescricao("");
+			getTarefas().setDeadline(new Date());
+			
+			showSuccess();
+		} catch (IllegalArgumentException e) {
+			showError();
+		}
 	}
 
 	public Tarefas getTarefas() {
@@ -60,4 +72,17 @@ public class TarefasController {
 	public Map<String, String> getPrioridadeOptionsMap() {
 		return prioridadeOptionsMap;
 	}
+		
+	public void addMessage(FacesMessage.Severity severity, String summary, String detail) {
+        FacesContext.getCurrentInstance().
+                addMessage(null, new FacesMessage(severity, summary, detail));
+    }
+
+    public void showSuccess() {
+        addMessage(FacesMessage.SEVERITY_INFO, "Sucesso", "Cadastro realizado com sucesso");
+    }
+
+    public void showError() {
+        addMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Ocorreu um erro. Verifique os dados");
+    }
 }
